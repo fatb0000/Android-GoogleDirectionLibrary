@@ -132,9 +132,9 @@ public class DirectionRequest {
     private String waypointsToString(List<LatLng> waypoints) {
         if (waypoints != null && !waypoints.isEmpty()) {
             String string = param.isOptimizeWaypoints() ? "optimize:true|" : "";
-            string += waypoints.get(0).latitude + "," + waypoints.get(0).longitude;
+            string += "via:"+waypoints.get(0).latitude + "," + waypoints.get(0).longitude;
             for (int i = 1; i < waypoints.size(); i++) {
-                string += "|" + waypoints.get(i).latitude + "," + waypoints.get(i).longitude;
+                string += "|" + "via:"+waypoints.get(i).latitude + "," + waypoints.get(i).longitude;
             }
             return string;
         }
